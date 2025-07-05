@@ -17,7 +17,7 @@ const PersonalProjects: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h4 className="text-xl font-bold text-gray-900 mb-1">
-              Founder & Full-Stack Developer
+              Founder & Developer
             </h4>
             <div className="flex items-center space-x-2 text-gray-600 mb-3">
             
@@ -83,7 +83,7 @@ const PersonalProjects: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h4 className="text-xl font-bold text-gray-900 mb-1">
-              Founder & Full-Stack Developer
+              Founder &  Developer
             </h4>
             <div className="flex items-center space-x-2 text-gray-600 mb-3"> 
            <span className="font-medium">GlucoVision – Diabetes Management App</span>
