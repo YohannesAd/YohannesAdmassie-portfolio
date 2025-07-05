@@ -8,7 +8,7 @@ const ProfessionalExperience: React.FC = () => {
           Professional Experience
         </h3>
         <p className="text-gray-600 mb-8">
-          Real-world software development experience through university collaborations
+          Industry level software development experience through university collaborations
         </p>
       </div>
 

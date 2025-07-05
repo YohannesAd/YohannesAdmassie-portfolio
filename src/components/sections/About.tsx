@@ -4,53 +4,35 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-16">
+        <div className="space-y-8">
           {/* Header */}
-          <div className="text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Driven & Innovative
-              <span className="block text-blue-600">Full-Stack Developer</span>
+          <div className="text-center space-y-6 mt-12">
+            <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <span className="block text-blue-600">Wlecome to my Portfolio!</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              22-year-old Computer Information Technology student with a minor in Mathematics at
-              Minnesota State University, Mankato. Passionate about combining full-stack development
-              and AI/machine learning to build impactful, real-world products.
+              My name is Yohannes Admassie, a 22 years old Computer Information Technology student with a minor in Mathematics at
+              Minnesota State University, Mankato.Passionate about combining full-stack development
+              and AI/machine learning to build impactful products that solve real-world problems.
             </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 py-6 max-w-md mx-auto">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">22</div>
-                <div className="text-sm text-gray-600">Years Old</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">2</div>
-                <div className="text-sm text-gray-600">Major Projects</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">100%</div>
-                <div className="text-sm text-gray-600">Deployed</div>
-              </div>
-            </div>
           </div>
 
           {/* Main Story with Profile Photo */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <div className="space-y-4">
+              <h3 className="text-3xl font-bold text-gray-900">
                 My Journey & Experience
               </h3>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
                   Through my school capstone projects, I had the opportunity to work as both a
                   software developer and software engineer. That experience gave me hands-on
-                  exposure to industry-level software development including system architecture,
+                  exposure to industry level software development concepts including system architecture,
                   design, Agile methodology, and working across the full software development life cycle.
                 </p>
                 <p>
-                  It was the moment everything clicked: building real solutions with real teams
-                  for real users. This experience taught me that great software isn't just about
-                  code—it's about understanding problems, collaborating effectively, and delivering
+                 This experience taught me that great software isn't just about
+                  code,it's about understanding problems, collaborating effectively, and delivering
                   solutions that make a real impact.
                 </p>
                 <p>
@@ -64,19 +46,16 @@ const About: React.FC = () => {
 
             <div className="space-y-6">
               {/* Profile Photo */}
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start mt-20">
                 <div className="relative">
                   <img
                     src="/src/assets/profile.png"
                     alt="Yohannes Admassie"
-                    className="w-64 h-64 rounded-2xl shadow-2xl object-cover"
+                    className="w-80 h-70 rounded-2xl shadow-2xl object-cover"
                   />
-                  
+
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">
-                Current status
-              </h3>
               <div className="grid gap-4">
                 <div className="flex space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -125,7 +104,7 @@ const About: React.FC = () => {
           {/* Mission Statement */}
           <div className="text-center space-y-4 bg-white rounded-2xl p-8 shadow-lg">
             <h3 className="text-xl font-semibold text-gray-900">
-              My goal isn't just to build apps—it's to build a startup that makes a real impact.
+             “Our minds are capable of incredible things. With belief and consistency, anything becomes possible.”
             </h3>
             <p className="text-gray-600">
               Combining technical expertise with entrepreneurial vision to create solutions that matter.

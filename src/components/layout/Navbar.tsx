@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FileText, X, Menu } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,9 +73,11 @@ const Navbar: React.FC = () => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center px-4 py-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm font-medium rounded-lg transition-colors"
+              download="Yohannes_Admassie_Resume.pdf"
+              className="hidden sm:inline-flex items-center space-x-2 px-4 py-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm font-medium rounded-lg transition-colors"
             >
-              📄 Resume
+              <FileText className="w-4 h-4" />
+              <span>Resume</span>
             </a>
 
             {/* Mobile menu button */}
@@ -83,9 +86,9 @@ const Navbar: React.FC = () => {
               className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
             >
               {isMenuOpen ? (
-                <span className="text-2xl">✕</span>
+                <X className="w-6 h-6" />
               ) : (
-                <span className="text-2xl">☰</span>
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>
@@ -109,9 +112,11 @@ const Navbar: React.FC = () => {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center px-4 py-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm font-medium rounded-lg transition-colors"
+                  download="Yohannes_Admassie_Resume.pdf"
+                  className="flex items-center justify-center space-x-2 w-full px-4 py-2 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm font-medium rounded-lg transition-colors"
                 >
-                  📄 Download Resume
+                  <FileText className="w-4 h-4" />
+                  <span>Download Resume</span>
                 </a>
               </div>
             </div>

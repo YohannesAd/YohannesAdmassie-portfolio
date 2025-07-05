@@ -112,7 +112,7 @@ const Skills: React.FC = () => {
           {/* Header */}
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Technical Skills
+              Skills
             </h2>
           </div>
 

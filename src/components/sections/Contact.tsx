@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Mail, Send, FileText } from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -27,21 +29,21 @@ const Contact: React.FC = () => {
 
   const contactMethods = [
     {
-      icon: '📧',
+      icon: Mail,
       title: 'Email',
       value: 'yohannes.30belachew@gmail.com',
       link: 'mailto:yohannes.30belachew@gmail.com',
       description: 'Send me an email'
     },
     {
-      icon: '💼',
+      icon: FaLinkedin,
       title: 'LinkedIn',
       value: 'Yohannes Badmassie',
       link: 'https://www.linkedin.com/in/yohannes-badmassie',
       description: 'Connect professionally'
     },
     {
-      icon: '💻',
+      icon: FaGithub,
       title: 'GitHub',
       value: 'YohannesAd',
       link: 'https://github.com/YohannesAd',
@@ -78,7 +80,7 @@ const Contact: React.FC = () => {
                     className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <span className="text-2xl">{method.icon}</span>
+                      <method.icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900">{method.title}</h4>
@@ -97,10 +99,28 @@ const Contact: React.FC = () => {
                 <h4 className="font-semibold text-gray-900 mb-3">Quick Info</h4>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p> <strong>Location:</strong> Minnesota, USA</p>
-                  <p> <strong>Avalibliety:</strong> Open to both internships and full-time positions</p>
+                  <p> <strong>Availability:</strong> Open to both internships and full-time positions</p>
                   <p> <strong>Status:</strong> Immediate availability for new opportunities</p>
                   <p> <strong>Response Time:</strong> Usually within 24 hours</p>
                 </div>
+              </div>
+
+              {/* Resume Download */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
+                <h4 className="font-semibold mb-3">Download My Resume</h4>
+                <p className="text-blue-100 text-sm mb-4">
+                  Get a detailed overview of my experience, skills, and achievements.
+                </p>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Yohannes_Admassie_Resume.pdf"
+                  className="inline-flex items-center space-x-2 bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>Download Resume</span>
+                </a>
               </div>
             </div>
 
@@ -181,13 +201,9 @@ const Contact: React.FC = () => {
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <span>Send Message</span>
-                  <span className="text-xl">📤</span>
+                  <Send className="w-5 h-5" />
                 </button>
               </form>
-
-              <p className="text-sm text-gray-600 text-center">
-                This form will open your email client with the message pre-filled.
-              </p>
             </div>
           </div>
         </div>
