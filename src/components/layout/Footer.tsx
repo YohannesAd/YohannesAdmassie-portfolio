@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Rocket, Star } from 'lucide-react';
+import { Mail, MapPin, Rocket, Star, FileText } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold">Yohannes Admassie</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
              Crafted by a developer who believes in progress, not perfection.
-             Powered by passion, purpose, and persistence.
+             Powered by passion, purpose, and consistency.
              Always learning. Always building.
             </p>
             <div className="flex space-x-4">
@@ -83,6 +83,18 @@ const Footer: React.FC = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Yohannes_Admassie_Resume.pdf"
+                  className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors text-sm hover:underline"
+                >
+                  <FileText className="w-3 h-3" />
+                  <span>Resume</span>
+                </a>
+              </li>
             </ul>
           </div>
 

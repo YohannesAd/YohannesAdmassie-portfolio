@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send } from 'lucide-react';
+import { Mail, Send, FileText } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
@@ -99,10 +99,28 @@ const Contact: React.FC = () => {
                 <h4 className="font-semibold text-gray-900 mb-3">Quick Info</h4>
                 <div className="space-y-2 text-sm text-gray-600">
                   <p> <strong>Location:</strong> Minnesota, USA</p>
-                  <p> <strong>Avalibliety:</strong> Open to both internships and full-time positions</p>
+                  <p> <strong>Availability:</strong> Open to both internships and full-time positions</p>
                   <p> <strong>Status:</strong> Immediate availability for new opportunities</p>
                   <p> <strong>Response Time:</strong> Usually within 24 hours</p>
                 </div>
+              </div>
+
+              {/* Resume Download */}
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
+                <h4 className="font-semibold mb-3">Download My Resume</h4>
+                <p className="text-blue-100 text-sm mb-4">
+                  Get a detailed overview of my experience, skills, and achievements.
+                </p>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Yohannes_Admassie_Resume.pdf"
+                  className="inline-flex items-center space-x-2 bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>Download Resume</span>
+                </a>
               </div>
             </div>
 
