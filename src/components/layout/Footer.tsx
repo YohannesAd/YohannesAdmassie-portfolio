@@ -1,4 +1,6 @@
 import React from 'react';
+import { Mail, MapPin, Rocket, Star } from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -7,17 +9,17 @@ const Footer: React.FC = () => {
     {
       name: 'GitHub',
       url: 'https://github.com/YohannesAd',
-      icon: '💻',
+      icon: FaGithub,
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/yohannes-badmassie',
-      icon: '💼',
+      icon: FaLinkedin,
     },
     {
       name: 'Email',
       url: 'mailto:yohannes.30belachew@gmail.com',
-      icon: '📧',
+      icon: Mail,
     },
   ];
 
@@ -46,9 +48,9 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold">Yohannes Admassie</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Driven CIT student and full-stack developer passionate about building
-              innovative startup applications that solve real-world problems.
-              Currently developing fitness and healthcare technology solutions.
+             Crafted by a developer who believes in progress, not perfection.
+             Powered by passion, purpose, and persistence.
+             Always learning. Always building.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (
@@ -60,7 +62,7 @@ const Footer: React.FC = () => {
                   className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center space-x-2 hover:scale-110 transform"
                   title={link.name}
                 >
-                  <span className="text-xl">{link.icon}</span>
+                  <link.icon className="w-5 h-5" />
                   <span className="sr-only">{link.name}</span>
                 </a>
               ))}
@@ -95,7 +97,7 @@ const Footer: React.FC = () => {
               className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
             >
               <span>Get In Touch</span>
-              <span className="text-lg">🚀</span>
+              <Rocket className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -113,16 +115,20 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="flex items-center space-x-4 text-sm text-gray-400">
-              <span>📍 Minnesota, USA</span>
-              <span>💼 Open to opportunities</span>
+              <span className="flex items-center space-x-1">
+                <MapPin className="w-4 h-4" />
+                <span>Minnesota, USA</span>
+              </span>
+              <span>Open to relocation</span>
             </div>
           </div>
 
           {/* Additional Info */}
           <div className="mt-4 pt-4 border-t border-gray-800 text-center">
-            <p className="text-xs text-gray-500">
-              Passionate about creating technology that makes a positive impact.
-              Let's build something amazing together! 🌟
+            <p className="text-xs text-gray-500 flex items-center justify-center space-x-1">
+              <span>Passionate about creating technology that makes a positive impact.</span>
+              <span>Let's build something amazing together!</span>
+              <Star className="w-3 h-3 text-yellow-400" />
             </p>
           </div>
         </div>

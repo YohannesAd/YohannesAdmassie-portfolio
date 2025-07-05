@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Mail, Send } from 'lucide-react';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -27,21 +29,21 @@ const Contact: React.FC = () => {
 
   const contactMethods = [
     {
-      icon: '📧',
+      icon: Mail,
       title: 'Email',
       value: 'yohannes.30belachew@gmail.com',
       link: 'mailto:yohannes.30belachew@gmail.com',
       description: 'Send me an email'
     },
     {
-      icon: '💼',
+      icon: FaLinkedin,
       title: 'LinkedIn',
       value: 'Yohannes Badmassie',
       link: 'https://www.linkedin.com/in/yohannes-badmassie',
       description: 'Connect professionally'
     },
     {
-      icon: '💻',
+      icon: FaGithub,
       title: 'GitHub',
       value: 'YohannesAd',
       link: 'https://github.com/YohannesAd',
@@ -78,7 +80,7 @@ const Contact: React.FC = () => {
                     className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <span className="text-2xl">{method.icon}</span>
+                      <method.icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900">{method.title}</h4>
@@ -181,13 +183,9 @@ const Contact: React.FC = () => {
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
                   <span>Send Message</span>
-                  <span className="text-xl">📤</span>
+                  <Send className="w-5 h-5" />
                 </button>
               </form>
-
-              <p className="text-sm text-gray-600 text-center">
-                This form will open your email client with the message pre-filled.
-              </p>
             </div>
           </div>
         </div>
