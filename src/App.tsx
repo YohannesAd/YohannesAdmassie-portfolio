@@ -1,10 +1,18 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Tailwind is Working 🎉
-      </h1>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Routes>
+          {/* Main landing page with all sections */}
+          <Route path="/" element={<HomePage />} />
+          {/* We'll add project detail routes later when your project components are ready */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
