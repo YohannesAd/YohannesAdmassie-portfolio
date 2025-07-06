@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white overflow-x-hidden w-full max-w-full">
         <Routes>
           {/* Main landing page with all sections */}
           <Route path="/" element={<HomePage />} />

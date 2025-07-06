@@ -106,46 +106,46 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-12">
+    <section id="skills" className="py-16 bg-white overflow-x-hidden w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="space-y-12 w-full">
           {/* Header */}
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <div className="text-center space-y-4 w-full">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 break-words">
               Skills
             </h2>
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
             {skillCategories.map((category, index) => {
               const colors = getColorClasses(category.color);
               return (
                 <div
                   key={category.title}
-                  className={`${colors.bg} ${colors.border} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300`}
+                  className={`${colors.bg} ${colors.border} border-2 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all duration-300 w-full max-w-full`}
                 >
-                  <div className="flex items-center space-x-3 mb-4">
-                    <span className="text-2xl">{category.icon}</span>
-                    <h3 className={`text-lg font-bold ${colors.text}`}>
+                  <div className="flex items-center space-x-3 mb-4 w-full">
+                    <span className="text-xl md:text-2xl flex-shrink-0">{category.icon}</span>
+                    <h3 className={`text-base md:text-lg font-bold ${colors.text} break-words flex-1 min-w-0`}>
                       {category.title}
                     </h3>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-3 w-full">
                     {category.skills.map((skill) => (
-                      <div key={skill.name} className="flex items-center justify-between">
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="text-sm font-medium text-gray-900">
+                      <div key={skill.name} className="flex items-center justify-between w-full">
+                        <div className="flex-1 min-w-0 w-full">
+                          <div className="flex items-center justify-between mb-1 w-full">
+                            <span className="text-sm font-medium text-gray-900 break-words flex-1 min-w-0">
                               {skill.name}
                             </span>
-                            <span className="text-xs text-gray-500">
+                            <span className="text-xs text-gray-500 flex-shrink-0 ml-2">
                               {skill.years}
                             </span>
                           </div>
-                          <div className="flex items-center space-x-2">
-                            <div className="flex-1 bg-gray-200 rounded-full h-2">
+                          <div className="flex items-center space-x-2 w-full">
+                            <div className="flex-1 bg-gray-200 rounded-full h-2 min-w-0">
                               <div
                                 className={`h-2 rounded-full ${getLevelColor(skill.level)}`}
                                 style={{
@@ -154,7 +154,7 @@ const Skills: React.FC = () => {
                                 }}
                               ></div>
                             </div>
-                            <span className={`text-xs px-2 py-1 rounded-full ${colors.badge} ${colors.text} font-medium`}>
+                            <span className={`text-xs px-2 py-1 rounded-full ${colors.badge} ${colors.text} font-medium flex-shrink-0`}>
                               {skill.level}
                             </span>
                           </div>
@@ -168,27 +168,27 @@ const Skills: React.FC = () => {
           </div>
 
           {/* Summary Stats */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
-            <div className="text-center space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 md:p-8 w-full max-w-full">
+            <div className="text-center space-y-6 w-full">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words">
                 Technical Proficiency Summary
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">15+</div>
-                  <div className="text-sm text-gray-600">Technologies</div>
+                  <div className="text-2xl md:text-3xl font-bold text-blue-600">15+</div>
+                  <div className="text-xs md:text-sm text-gray-600 break-words">Technologies</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">4+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-2xl md:text-3xl font-bold text-green-600">4+</div>
+                  <div className="text-xs md:text-sm text-gray-600 break-words">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">2</div>
-                  <div className="text-sm text-gray-600">Deployed Apps</div>
+                  <div className="text-2xl md:text-3xl font-bold text-purple-600">2</div>
+                  <div className="text-xs md:text-sm text-gray-600 break-words">Deployed Apps</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-600">100%</div>
-                  <div className="text-sm text-gray-600">Production Ready</div>
+                  <div className="text-2xl md:text-3xl font-bold text-orange-600">100%</div>
+                  <div className="text-xs md:text-sm text-gray-600 break-words">Production Ready</div>
                 </div>
               </div>
             </div>

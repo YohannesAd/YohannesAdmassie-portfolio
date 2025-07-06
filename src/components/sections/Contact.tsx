@@ -52,42 +52,41 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-12">
+    <section id="contact" className="py-16 bg-gray-50 overflow-x-hidden w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="space-y-12 w-full">
           {/* Header */}
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <div className="text-center space-y-4 w-full">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 break-words">
               Get In Touch
             </h2>
-      
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 w-full">
             {/* Contact Methods */}
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold text-gray-900">
+            <div className="space-y-8 w-full">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words">
                 Let's Connect
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-6 w-full">
                 {contactMethods.map((method) => (
                   <a
                     key={method.title}
                     href={method.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                    className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full max-w-full"
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                       <method.icon className="w-6 h-6 text-blue-600" />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900">{method.title}</h4>
-                      <p className="text-blue-600 font-medium">{method.value}</p>
-                      <p className="text-sm text-gray-600">{method.description}</p>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-gray-900 break-words">{method.title}</h4>
+                      <p className="text-blue-600 font-medium break-words">{method.value}</p>
+                      <p className="text-sm text-gray-600 break-words">{method.description}</p>
                     </div>
-                    <div className="text-blue-600">
+                    <div className="text-blue-600 flex-shrink-0">
                       <span className="text-xl">→</span>
                     </div>
                   </a>
@@ -95,20 +94,20 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Quick Info */}
-              <div className="bg-blue-50 rounded-xl p-6">
-                <h4 className="font-semibold text-gray-900 mb-3">Quick Info</h4>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <p> <strong>Location:</strong> Minnesota, USA</p>
-                  <p> <strong>Availability:</strong> Open to both internships and full-time positions</p>
-                  <p> <strong>Status:</strong> Immediate availability for new opportunities</p>
-                  <p> <strong>Response Time:</strong> Usually within 24 hours</p>
+              <div className="bg-blue-50 rounded-xl p-6 w-full max-w-full">
+                <h4 className="font-semibold text-gray-900 mb-3 break-words">Quick Info</h4>
+                <div className="space-y-2 text-sm text-gray-600 w-full">
+                  <p className="break-words"><strong>Location:</strong> Minnesota, USA</p>
+                  <p className="break-words"><strong>Availability:</strong> Open to both internships and full-time positions</p>
+                  <p className="break-words"><strong>Status:</strong> Immediate availability for new opportunities</p>
+                  <p className="break-words"><strong>Response Time:</strong> Usually within 24 hours</p>
                 </div>
               </div>
 
               {/* Resume Download */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
-                <h4 className="font-semibold mb-3">Download My Resume</h4>
-                <p className="text-blue-100 text-sm mb-4">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white w-full max-w-full">
+                <h4 className="font-semibold mb-3 break-words">Download My Resume</h4>
+                <p className="text-blue-100 text-sm mb-4 break-words">
                   Get a detailed overview of my experience, skills, and achievements.
                 </p>
                 <a
@@ -116,24 +115,24 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   download="Yohannes_Admassie_Resume.pdf"
-                  className="inline-flex items-center space-x-2 bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                  className="inline-flex items-center space-x-2 bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors duration-200 break-words"
                 >
-                  <FileText className="w-4 h-4" />
+                  <FileText className="w-4 h-4 flex-shrink-0" />
                   <span>Download Resume</span>
                 </a>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold text-gray-900">
+            <div className="space-y-8 w-full">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words">
                 Send a Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <form onSubmit={handleSubmit} className="space-y-6 w-full">
+                <div className="grid md:grid-cols-2 gap-6 w-full">
+                  <div className="w-full">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 break-words">
                       Your Name
                     </label>
                     <input
@@ -143,12 +142,12 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors max-w-full"
                       placeholder="John Doe"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <div className="w-full">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 break-words">
                       Your Email
                     </label>
                     <input
@@ -158,14 +157,14 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors max-w-full"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <div className="w-full">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2 break-words">
                     Subject
                   </label>
                   <input
@@ -175,13 +174,13 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors max-w-full"
                     placeholder="Project Collaboration / Job Opportunity / General Inquiry"
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <div className="w-full">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2 break-words">
                     Message
                   </label>
                   <textarea
@@ -191,17 +190,17 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none max-w-full"
                     placeholder="Tell me about your project, opportunity, or just say hello!"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 max-w-full"
                 >
                   <span>Send Message</span>
-                  <Send className="w-5 h-5" />
+                  <Send className="w-5 h-5 flex-shrink-0" />
                 </button>
               </form>
             </div>

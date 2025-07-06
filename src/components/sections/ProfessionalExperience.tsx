@@ -17,7 +17,7 @@ const ProfessionalExperience: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h4 className="text-xl font-bold text-gray-900 mb-1">
-              Software Engineer
+              Software Engineer Co-op
             </h4>
             <div className="flex items-center space-x-2 text-gray-600 mb-3">
               <span className="text-lg">🏛️</span>
@@ -64,7 +64,7 @@ const ProfessionalExperience: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h4 className="text-xl font-bold text-gray-900 mb-1">
-              Software Developer
+              Software Developer Co-op
             </h4>
             <div className="flex items-center space-x-2 text-gray-600 mb-3">
               <span className="text-lg">🏛️</span>
