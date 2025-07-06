@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, X, Menu } from 'lucide-react';
+import { useActiveSection } from '../../hooks';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // Navigation items configuration
+  const navItems = [
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+  // Use custom hook to track active section
+  const activeSection = useActiveSection(navItems.map(item => item.id));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,13 +26,6 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Work Experience' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' },
-  ];
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -59,7 +65,11 @@ const Navbar: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-2 lg:px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap"
+                  className={`px-2 lg:px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
+                    activeSection === item.id
+                      ? 'text-blue-600 bg-blue-50 rounded-md'
+                      : 'text-gray-700 hover:text-blue-600'
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -102,7 +112,11 @@ const Navbar: React.FC = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors break-words"
+                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors break-words rounded-md ${
+                    activeSection === item.id
+                      ? 'text-blue-600 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  }`}
                 >
                   {item.label}
                 </button>

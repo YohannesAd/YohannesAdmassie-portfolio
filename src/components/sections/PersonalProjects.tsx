@@ -63,6 +63,26 @@ const PersonalProjects: React.FC = () => {
           </ul>
         </div>
 
+        {/* Project Links */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-4">
+          <a
+            href="https://hiwot-fit.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+          >
+            🚀 View Live App
+          </a>
+          <a
+            href="https://github.com/YohannesAd/hiwot-fit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2 border border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white text-sm font-medium rounded-lg transition-colors duration-200"
+          >
+            📂 View Code
+          </a>
+        </div>
+
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Next.js</span>
           <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">React</span>
@@ -131,6 +151,26 @@ const PersonalProjects: React.FC = () => {
               <span>Designed and deployed a fully documented, production-grade backend with FastAPI, structured logging, and robust error handling</span>
             </li>
           </ul>
+        </div>
+
+        {/* Project Links */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-4">
+          <a
+            href="https://glucovision.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+          >
+            🚀 View Live App
+          </a>
+          <a
+            href="https://github.com/YohannesAd/glucovision"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm font-medium rounded-lg transition-colors duration-200"
+          >
+            📂 View Code
+          </a>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-4">

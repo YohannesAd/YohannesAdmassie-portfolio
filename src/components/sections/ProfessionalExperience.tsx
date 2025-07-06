@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProfessionalExperience: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleWorkExperienceClick = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <div className="space-y-6">
       <div className="text-center">
@@ -13,7 +20,10 @@ const ProfessionalExperience: React.FC = () => {
       </div>
 
       {/* Software Engineer - Minnesota State University */}
-      <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600">
+      <div
+        className="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600 cursor-pointer hover:shadow-lg transition-shadow duration-200"
+        onClick={() => handleWorkExperienceClick('/work-experience/minnesota-state-university')}
+      >
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h4 className="text-xl font-bold text-gray-900 mb-1">
@@ -60,7 +70,10 @@ const ProfessionalExperience: React.FC = () => {
       </div>
 
       {/* Software Developer - University of Wisconsin, Madison */}
-      <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-600">
+      <div
+        className="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-600 cursor-pointer hover:shadow-lg transition-shadow duration-200"
+        onClick={() => handleWorkExperienceClick('/work-experience/university-of-wisconsin-madison')}
+      >
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
           <div>
             <h4 className="text-xl font-bold text-gray-900 mb-1">

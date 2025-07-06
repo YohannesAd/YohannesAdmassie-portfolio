@@ -27,6 +27,7 @@ const Footer: React.FC = () => {
     { label: 'About', id: 'about' },
     { label: 'Experience', id: 'experience' },
     { label: 'Skills', id: 'skills' },
+    { label: 'Testimonials', id: 'testimonials' },
     { label: 'Contact', id: 'contact' },
   ];
 

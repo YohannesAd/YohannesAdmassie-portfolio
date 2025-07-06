@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../hooks';
 import ProfessionalExperience from './ProfessionalExperience';
 import PersonalProjects from './PersonalProjects';
 
 const Experience: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'professional' | 'personal'>('professional');
 
+  // Animation hooks for different sections
+  const { isVisible: headerVisible, ref: headerRef } = useScrollAnimation({ threshold: 0.2 });
+  const { isVisible: tabsVisible, ref: tabsRef } = useScrollAnimation({ threshold: 0.3 });
+  const { isVisible: contentVisible, ref: contentRef } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="experience" className="py-16 bg-gray-50 overflow-x-hidden w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-12 w-full">
           {/* Header */}
-          <div className="text-center space-y-4 w-full">
+          <motion.div
+            ref={headerRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={headerVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center space-y-4 w-full"
+          >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 break-words">
               Work Experience
             </h2>
@@ -18,10 +31,16 @@ const Experience: React.FC = () => {
               A combination of professional work and personal projects that showcase
               my growth as a developer and my commitment to continuous learning.
             </p>
-          </div>
+          </motion.div>
 
           {/* Tabs */}
-          <div className="flex justify-center w-full">
+          <motion.div
+            ref={tabsRef}
+            initial={{ opacity: 0, y: 20 }}
+            animate={tabsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            className="flex justify-center w-full"
+          >
             <div className="bg-white rounded-lg p-1 shadow-md max-w-full">
               <div className="flex space-x-1 flex-wrap justify-center">
                 <button
@@ -46,16 +65,22 @@ const Experience: React.FC = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="transition-all duration-300 w-full overflow-x-hidden">
+          <motion.div
+            ref={contentRef}
+            initial={{ opacity: 0 }}
+            animate={contentVisible ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            className="transition-all duration-300 w-full overflow-x-hidden"
+          >
             {activeTab === 'professional' ? (
               <ProfessionalExperience />
             ) : (
               <PersonalProjects />
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

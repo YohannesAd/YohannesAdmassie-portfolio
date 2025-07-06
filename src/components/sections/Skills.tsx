@@ -1,6 +1,14 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../hooks';
+import { fadeInUp, staggerContainer, staggerItem, hoverLift } from '../../utils/animations';
 
 const Skills: React.FC = () => {
+  // Animation hooks for different sections
+  const { isVisible: headerVisible, ref: headerRef } = useScrollAnimation({ threshold: 0.2 });
+  const { isVisible: gridVisible, ref: gridRef } = useScrollAnimation({ threshold: 0.1 });
+  const { isVisible: summaryVisible, ref: summaryRef } = useScrollAnimation({ threshold: 0.3 });
+
   const skillCategories = [
     {
       title: "Frontend Development",
@@ -25,6 +33,7 @@ const Skills: React.FC = () => {
         { name: "Node.js", level: "Advanced", years: "2+" },
         { name: "FastAPI", level: "Advanced", years: "2+" },
         { name: "Python", level: "Advanced", years: "2+" },
+         { name: "Java", level: "Advanced", years: "2+" },
         { name: "RESTful APIs", level: "Advanced", years: "2+" },
         { name: "JWT Authentication", level: "Advanced", years: "1+" },
         { name: "API Design", level: "Advanced", years: "2+" },
@@ -37,11 +46,14 @@ const Skills: React.FC = () => {
       color: "purple",
       skills: [
         { name: "MongoDB", level: "Advanced", years: "2+" },
+        { name: "Firebase", level: "Advanced", years: "1+" },
         { name: "PostgreSQL", level: "Advanced", years: "2+" },
         { name: "Database Design", level: "Advanced", years: "2+" },
         { name: "Vercel", level: "Advanced", years: "2+" },
         { name: "AWS", level: "Intermediate", years: "1+" },
         { name: "Docker", level: "Intermediate", years: "1+" }
+
+
       ]
     },
     {
@@ -51,8 +63,9 @@ const Skills: React.FC = () => {
       skills: [
         { name: "OpenAI GPT-4 API", level: "Advanced", years: "1+" },
         { name: "scikit-learn", level: "Intermediate", years: "1+" },
-        { name: "Machine Learning", level: "Intermediate", years: "1+" },
-        { name: "Predictive Analytics", level: "Intermediate", years: "1+" },
+        { name: "Pandas", level: "Intermediate", years: "1+" },
+        { name: "Numpy", level: "Intermediate", years: "1+" },
+        { name: "Spark", level: "Intermediate", years: "1+" },
         { name: "AI Integration", level: "Advanced", years: "1+" }
       ]
     },
@@ -67,6 +80,7 @@ const Skills: React.FC = () => {
         { name: "Team Collaboration", level: "Advanced", years: "2+" },
         { name: "Code Review", level: "Advanced", years: "2+" },
         { name: "Testing", level: "Intermediate", years: "1+" }
+        
       ]
     },
     {
@@ -110,20 +124,34 @@ const Skills: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-12 w-full">
           {/* Header */}
-          <div className="text-center space-y-4 w-full">
+          <motion.div
+            ref={headerRef}
+            initial={fadeInUp.initial}
+            animate={headerVisible ? fadeInUp.animate : fadeInUp.initial}
+            transition={fadeInUp.transition}
+            className="text-center space-y-4 w-full"
+          >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 break-words">
               Skills
             </h2>
-          </div>
+          </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full">
-            {skillCategories.map((category, index) => {
+          <motion.div
+            ref={gridRef}
+            variants={staggerContainer}
+            initial="initial"
+            animate={gridVisible ? "animate" : "initial"}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full"
+          >
+            {skillCategories.map((category) => {
               const colors = getColorClasses(category.color);
               return (
-                <div
+                <motion.div
                   key={category.title}
+                  variants={staggerItem}
                   className={`${colors.bg} ${colors.border} border-2 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all duration-300 w-full max-w-full`}
+                  {...hoverLift}
                 >
                   <div className="flex items-center space-x-3 mb-4 w-full">
                     <span className="text-xl md:text-2xl flex-shrink-0">{category.icon}</span>
@@ -162,13 +190,19 @@ const Skills: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Summary Stats */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 md:p-8 w-full max-w-full">
+          <motion.div
+            ref={summaryRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={summaryVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 md:p-8 w-full max-w-full"
+          >
             <div className="text-center space-y-6 w-full">
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words">
                 Technical Proficiency Summary
@@ -192,7 +226,7 @@ const Skills: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

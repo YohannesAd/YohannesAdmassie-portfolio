@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { Mail, Send, FileText } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { useScrollAnimation } from '../../hooks';
 
 const Contact: React.FC = () => {
+  // Animation hooks for different sections
+  const { isVisible: headerVisible, ref: headerRef } = useScrollAnimation({ threshold: 0.2 });
+  const { isVisible: contactVisible, ref: contactRef } = useScrollAnimation({ threshold: 0.1 });
+  const { isVisible: formVisible, ref: formRef } = useScrollAnimation({ threshold: 0.2 });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,38 +63,79 @@ const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-12 w-full">
           {/* Header */}
-          <div className="text-center space-y-4 w-full">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 break-words">
-              Get In Touch
-            </h2>
-          </div>
+          <motion.div
+            ref={headerRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={headerVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-full"
+          >
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start w-full">
+              {/* Left side - Ready to Hire */}
+              <div className="text-center lg:text-left space-y-4">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 break-words">
+                  Ready to Hire?
+                </h2>
+                <p className="text-lg text-gray-600 break-words">
+                  I'm actively seeking internship and full-time opportunities. Let's discuss how I can contribute to your team's success.
+                </p>
+
+                {/* Availability Banner */}
+                <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                  Available for Immediate Start
+                </div>
+              </div>
+
+              {/* Right side - Let's Talk */}
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-6 border-l-4 border-purple-500 w-full">
+                <h4 className="font-semibold text-gray-900 mb-3 break-words">📞 Let's Talk!</h4>
+                <p className="text-sm text-gray-600 mb-4 break-words">
+                  Skip the back and forth emails. Schedule a call directly and let's discuss how I can contribute to your team.
+                </p>
+                <a
+                  href="https://cal.com/yohannes-admassie-1wjjpz/let-s-discuss-opportunities"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                >
+                  📅 Schedule a Call
+                </a>
+              </div>
+            </div>
+          </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 w-full">
             {/* Contact Methods */}
-            <div className="space-y-8 w-full">
+            <motion.div
+              ref={contactRef}
+              initial={{ opacity: 0, x: -50 }}
+              animate={contactVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+              className="space-y-8 w-full"
+            >
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words">
                 Let's Connect
               </h3>
 
-              <div className="space-y-6 w-full">
+              <div className="space-y-4 w-full">
                 {contactMethods.map((method) => (
                   <a
                     key={method.title}
                     href={method.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 w-full max-w-full"
+                    className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full max-w-full"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <method.icon className="w-6 h-6 text-blue-600" />
+                    <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <method.icon className="w-4 h-4 text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold text-gray-900 break-words">{method.title}</h4>
-                      <p className="text-blue-600 font-medium break-words">{method.value}</p>
-                      <p className="text-sm text-gray-600 break-words">{method.description}</p>
+                      <h4 className="font-medium text-gray-900 text-sm break-words">{method.title}</h4>
+                      <p className="text-blue-600 font-medium text-sm break-words">{method.value}</p>
                     </div>
                     <div className="text-blue-600 flex-shrink-0">
-                      <span className="text-xl">→</span>
+                      <span className="text-lg">→</span>
                     </div>
                   </a>
                 ))}
@@ -95,36 +143,39 @@ const Contact: React.FC = () => {
 
               {/* Quick Info */}
               <div className="bg-blue-50 rounded-xl p-6 w-full max-w-full">
-                <h4 className="font-semibold text-gray-900 mb-3 break-words">Quick Info</h4>
+                <h4 className="font-semibold text-gray-900 mb-3 break-words">Why Hire Me?</h4>
                 <div className="space-y-2 text-sm text-gray-600 w-full">
-                  <p className="break-words"><strong>Location:</strong> Minnesota, USA</p>
-                  <p className="break-words"><strong>Availability:</strong> Open to both internships and full-time positions</p>
-                  <p className="break-words"><strong>Status:</strong> Immediate availability for new opportunities</p>
-                  <p className="break-words"><strong>Response Time:</strong> Usually within 24 hours</p>
+                  <p className="break-words"><strong>🎯 Immediate Impact:</strong> 2 deployed applications, proven track record</p>
+                  <p className="break-words"><strong>💼 Work Ready:</strong> Industry experience through university collaborations</p>
+                  <p className="break-words"><strong>🚀 Growth Mindset:</strong> Continuously learning and building new projects</p>
+                  <p className="break-words"><strong>⚡ Quick Response:</strong> Usually reply within 24 hours</p>
+                  <p className="break-words"><strong>📍 Location:</strong> Minnesota, USA (Open to remote/relocation)</p>
                 </div>
               </div>
 
+
+
               {/* Resume Download */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white w-full max-w-full">
-                <h4 className="font-semibold mb-3 break-words">Download My Resume</h4>
-                <p className="text-blue-100 text-sm mb-4 break-words">
-                  Get a detailed overview of my experience, skills, and achievements.
-                </p>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download="Yohannes_Admassie_Resume.pdf"
-                  className="inline-flex items-center space-x-2 bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors duration-200 break-words"
-                >
-                  <FileText className="w-4 h-4 flex-shrink-0" />
-                  <span>Download Resume</span>
-                </a>
-              </div>
-            </div>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Yohannes_Admassie_Resume.pdf"
+                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 w-1/2 justify-center"
+              >
+                <FileText className="w-4 h-4 flex-shrink-0" />
+                <span>Download My Resume</span>
+              </a>
+            </motion.div>
 
             {/* Contact Form */}
-            <div className="space-y-8 w-full">
+            <motion.div
+              ref={formRef}
+              initial={{ opacity: 0, x: 50 }}
+              animate={formVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+              className="space-y-8 w-full"
+            >
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 break-words">
                 Send a Message
               </h3>
@@ -203,7 +254,7 @@ const Contact: React.FC = () => {
                   <Send className="w-5 h-5 flex-shrink-0" />
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

@@ -3,8 +3,10 @@ import Navbar from '../components/layout/Navbar';
 import About from '../components/sections/About';
 import Experience from '../components/sections/Experience';
 import Skills from '../components/sections/Skills';
+import Testimonials from '../components/sections/Testimonials';
 import Contact from '../components/sections/Contact';
 import Footer from '../components/layout/Footer';
+import FloatingActionButton from '../components/ui/FloatingActionButton';
 
 const HomePage: React.FC = () => {
   return (
@@ -14,9 +16,11 @@ const HomePage: React.FC = () => {
         <About />
         <Experience />
         <Skills />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />
+      <FloatingActionButton />
     </div>
   );
 };
