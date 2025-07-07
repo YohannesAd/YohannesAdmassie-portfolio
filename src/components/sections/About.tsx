@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../../hooks';
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, staggerItem, hoverLift } from '../../utils/animations';
+import profileImage from '../../assets/profile.png';
 
 const About: React.FC = () => {
   // Animation hooks for different sections
@@ -52,24 +53,7 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            {/* Call to Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                🚀 Hire Me Now
-              </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Yohannes_Admassie_Resume.pdf"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                📄 Download Resume
-              </a>
-            </div>
+            
 
             {/* Value Proposition Banner */}
             <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border-l-4 border-green-500">
@@ -128,7 +112,7 @@ const About: React.FC = () => {
                   {...hoverLift}
                 >
                   <img
-                    src="/src/assets/profile.png"
+                    src={profileImage}
                     alt="Yohannes Admassie"
                     className="w-64 h-64 md:w-80 md:h-80 rounded-2xl shadow-2xl object-cover"
                   />
@@ -164,7 +148,7 @@ const About: React.FC = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900 break-words">Full-Stack Developer</h4>
-                    <p className="text-gray-600 text-sm break-words">2024 full stack web development Udemy Boot camp certified.
+                    <p className="text-gray-600 text-sm break-words">2024 Full Stack Web development Certified (Udemy BootCamp).
                       Skilled in modern web development, mobile apps, and AI/machine learning integration.</p>
                   </div>
                 </motion.div>
@@ -192,7 +176,7 @@ const About: React.FC = () => {
                     <span className="text-blue-600 font-bold">📚</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-900 break-words">Addtional courses</h4>
+                    <h4 className="font-semibold text-gray-900 break-words">Additional courses</h4>
                     <p className="text-gray-600 text-sm break-words"> Data Structure And Algorithms,
                        Operating Systems, Computer Architecture, Topics In Information Management Systems, Database And Information Security, Programing Language</p>
                   </div>
