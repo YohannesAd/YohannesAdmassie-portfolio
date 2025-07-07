@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
 
               {/* Resume Download */}
               <a
-                href="/resume.pdf"
+                href="/YohannesAdsmassie-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Yohannes_Admassie_Resume.pdf"

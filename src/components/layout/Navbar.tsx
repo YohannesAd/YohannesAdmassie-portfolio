@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
           {/* Resume Button & Mobile Menu */}
           <div className="flex items-center space-x-2 md:space-x-4 flex-shrink-0">
             <a
-              href="/resume.pdf"
+              href="/YohannesAdsmassie-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download="Yohannes_Admassie_Resume.pdf"
