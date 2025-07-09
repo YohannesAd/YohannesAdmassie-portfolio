@@ -1,3 +1,3 @@
 # React + TypeScript + Vite
 
-yohannesadmassie.vercel.app
+https://yohannesadmassie.vercel.app/
