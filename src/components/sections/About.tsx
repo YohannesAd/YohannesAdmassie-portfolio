@@ -12,7 +12,7 @@ const About: React.FC = () => {
   const { isVisible: missionVisible, ref: missionRef } = useScrollAnimation({ threshold: 0.3 });
 
   return (
-    <section id="about" className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-x-hidden w-full">
+    <section id="about" className="py-12 sm:py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-x-hidden w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-8 w-full">
           {/* Header */}
@@ -23,33 +23,33 @@ const About: React.FC = () => {
             transition={fadeInUp.transition}
             className="text-center space-y-6 mt-12 w-full"
           >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight break-words">
-              
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight break-words px-2">
+
               <span className="block text-gray-900">Ready to Drive Innovation</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed break-words px-2">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed break-words px-4">
               Computer Science student with <strong>4+ years of coding experience</strong> and <strong>2 deployed startup applications</strong>.
               Specializing in React, Next.js, Python, and AI integration. Seeking internship or full time opportunities to
               contribute to innovative tech solutions and drive business growth.
             </p>
 
             {/* Key Stats */}
-            <div className="flex flex-wrap justify-center gap-6 mt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">2</div>
-                <div className="text-sm text-gray-600">Deployed Apps</div>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 px-2">
+              <div className="text-center min-w-[80px]">
+                <div className="text-xl sm:text-2xl font-bold text-blue-600">2</div>
+                <div className="text-xs sm:text-sm text-gray-600">Deployed Apps</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">4+</div>
-                <div className="text-sm text-gray-600">Years Coding</div>
+              <div className="text-center min-w-[80px]">
+                <div className="text-xl sm:text-2xl font-bold text-green-600">4+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Years Coding</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">15+</div>
-                <div className="text-sm text-gray-600">Technologies</div>
+              <div className="text-center min-w-[80px]">
+                <div className="text-xl sm:text-2xl font-bold text-purple-600">15+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Technologies</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">100%</div>
-                <div className="text-sm text-gray-600">Committed</div>
+              <div className="text-center min-w-[80px]">
+                <div className="text-xl sm:text-2xl font-bold text-orange-600">100%</div>
+                <div className="text-xs sm:text-sm text-gray-600">Committed</div>
               </div>
             </div>
 
@@ -67,15 +67,15 @@ const About: React.FC = () => {
           </motion.div>
 
           {/* Main Story with Profile Photo */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center w-full">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center w-full">
             <motion.div
               ref={contentRef}
               initial={fadeInLeft.initial}
               animate={contentVisible ? fadeInLeft.animate : fadeInLeft.initial}
               transition={{ ...fadeInLeft.transition, delay: 0.2 }}
-              className="space-y-10 w-full"
+              className="space-y-6 sm:space-y-8 lg:space-y-10 w-full"
             >
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 break-words">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 break-words">
                 Why Hire Me?
               </h3>
               <div className="space-y-4 text-gray-600 leading-relaxed w-full">
@@ -114,7 +114,7 @@ const About: React.FC = () => {
                   <img
                     src={profileImage}
                     alt="Yohannes Admassie"
-                    className="w-64 h-64 md:w-80 md:h-80 rounded-2xl shadow-2xl object-cover"
+                    className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-2xl shadow-2xl object-cover"
                   />
                 </motion.div>
               </div>

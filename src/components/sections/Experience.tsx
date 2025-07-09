@@ -13,9 +13,9 @@ const Experience: React.FC = () => {
   const { isVisible: contentVisible, ref: contentRef } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section id="experience" className="py-16 bg-gray-50 overflow-x-hidden w-full">
+    <section id="experience" className="py-12 sm:py-16 bg-gray-50 overflow-x-hidden w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="space-y-12 w-full">
+        <div className="space-y-8 sm:space-y-12 w-full">
           {/* Header */}
           <motion.div
             ref={headerRef}
@@ -45,7 +45,7 @@ const Experience: React.FC = () => {
               <div className="flex space-x-1 flex-wrap justify-center">
                 <button
                   onClick={() => setActiveTab('professional')}
-                  className={`flex items-center space-x-2 px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 touch-manipulation ${
                     activeTab === 'professional'
                       ? 'bg-blue-600 text-white shadow-md'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -55,7 +55,7 @@ const Experience: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab('personal')}
-                  className={`flex items-center space-x-2 px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 touch-manipulation ${
                     activeTab === 'personal'
                       ? 'bg-blue-600 text-white shadow-md'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'

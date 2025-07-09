@@ -120,7 +120,7 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-16 bg-white overflow-x-hidden w-full">
+    <section id="skills" className="py-12 sm:py-16 bg-white overflow-x-hidden w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-12 w-full">
           {/* Header */}
@@ -142,7 +142,7 @@ const Skills: React.FC = () => {
             variants={staggerContainer}
             initial="initial"
             animate={gridVisible ? "animate" : "initial"}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full"
           >
             {skillCategories.map((category) => {
               const colors = getColorClasses(category.color);
@@ -150,7 +150,7 @@ const Skills: React.FC = () => {
                 <motion.div
                   key={category.title}
                   variants={staggerItem}
-                  className={`${colors.bg} ${colors.border} border-2 rounded-xl p-4 md:p-6 hover:shadow-lg transition-all duration-300 w-full max-w-full`}
+                  className={`${colors.bg} ${colors.border} border-2 rounded-xl p-3 sm:p-4 md:p-6 hover:shadow-lg transition-all duration-300 w-full max-w-full`}
                   {...hoverLift}
                 >
                   <div className="flex items-center space-x-3 mb-4 w-full">

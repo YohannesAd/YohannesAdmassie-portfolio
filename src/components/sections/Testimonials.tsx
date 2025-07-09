@@ -40,7 +40,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-x-hidden w-full">
+    <section id="testimonials" className="py-12 sm:py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-x-hidden w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-12 w-full">
           {/* Header */}
@@ -65,13 +65,13 @@ const Testimonials: React.FC = () => {
             variants={staggerContainer}
             initial="initial"
             animate={testimonialsVisible ? "animate" : "initial"}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+            className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full"
           >
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border-l-4 border-blue-600 hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Rating */}
                 <div className="flex items-center mb-4">

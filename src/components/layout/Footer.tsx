@@ -86,10 +86,10 @@ const Footer: React.FC = () => {
               ))}
               <li>
                 <a
-                  href="/resume.pdf"
+                  href="/YohannesBAdsmassie-Resume .pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Yohannes_Admassie_Resume.pdf"
+                  download="YohannesBAdsmassie-Resume.pdf"
                   className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors text-sm hover:underline"
                 >
                   <FileText className="w-3 h-3 flex-shrink-0" />

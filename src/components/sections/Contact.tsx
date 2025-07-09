@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-gray-50 overflow-x-hidden w-full">
+    <section id="contact" className="py-12 sm:py-16 bg-gray-50 overflow-x-hidden w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="space-y-12 w-full">
           {/* Header */}
@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
                   href="https://cal.com/yohannes-admassie-1wjjpz/let-s-discuss-opportunities"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-all duration-200 touch-manipulation active:scale-95"
                 >
                   📅 Schedule a Call
                 </a>
@@ -125,13 +125,13 @@ const Contact: React.FC = () => {
                     href={method.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-3 p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full max-w-full"
+                    className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 w-full max-w-full touch-manipulation active:scale-95"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <method.icon className="w-4 h-4 text-blue-600" />
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <method.icon className="w-5 h-5 text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-gray-900 text-sm break-words">{method.title}</h4>
+                      <h4 className="font-medium text-gray-900 text-base break-words">{method.title}</h4>
                       <p className="text-blue-600 font-medium text-sm break-words">{method.value}</p>
                     </div>
                     <div className="text-blue-600 flex-shrink-0">
@@ -157,11 +157,11 @@ const Contact: React.FC = () => {
 
               {/* Resume Download */}
               <a
-                href="/YohannesAdsmassie-Resume.pdf"
+                href="/YohannesBAdsmassie-Resume .pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                download="Yohannes_Admassie_Resume.pdf"
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 w-1/2 justify-center"
+                download="YohannesBAdsmassie-Resume.pdf"
+                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 w-full sm:w-auto justify-center touch-manipulation active:scale-95"
               >
                 <FileText className="w-4 h-4 flex-shrink-0" />
                 <span>Download My Resume</span>
