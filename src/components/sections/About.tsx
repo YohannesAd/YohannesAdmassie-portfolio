@@ -28,7 +28,7 @@ const About: React.FC = () => {
               <span className="block text-gray-900">Ready to Drive Innovation</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed break-words px-2">
-              Computer Information Technology student with <strong>4+ years of coding experience</strong> and <strong>2 deployed startup applications</strong>.
+              Computer Science student with <strong>4+ years of coding experience</strong> and <strong>2 deployed startup applications</strong>.
               Specializing in React, Next.js, Python, and AI integration. Seeking internship or full time opportunities to
               contribute to innovative tech solutions and drive business growth.
             </p>
@@ -133,7 +133,7 @@ const About: React.FC = () => {
                     <span className="text-blue-600 font-bold">🎓</span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-gray-900 break-words">CIT Student</h4>
+                    <h4 className="font-semibold text-gray-900 break-words">Computer Science Student</h4>
                     <p className="text-gray-600 text-sm break-words">Minnesota State University, Mankato. Expected Graduation: May 2026</p>
                   </div>
                 </motion.div>
