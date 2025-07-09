@@ -1,3 +1,3 @@
 # React + TypeScript + Vite
 
-Currntly working on my personnal portfolio 
+yohannesadmassie.vercel.app
